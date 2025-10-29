@@ -1,0 +1,72 @@
+.accordion-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #d0d7de;
+}
+
+.accordion-item:hover {
+  border-color: #8c959f;
+  border-width: 2px;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2328;
+  cursor: pointer;
+}
+
+.accordion-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #2da44e;
+  width: 16px;
+  height: 2px;
+  transition: transform 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+.accordion-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg); /* creates the vertical bar */
+}
+
+.accordion-icon.open::after {
+  transform: translate(-50%, -50%) rotate(0deg); /* hide vertical */
+}
+
+.accordion-content {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: #57606a;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
